@@ -1,13 +1,13 @@
-# Traefik-Whoami Test Project
+# Traefik-Whoami Prototype
 
-_This is a mini project running on Docker engine, using docker-compose to launch a Traefik proxy and a go-based dumb web app Whoami._
+_This is a mini protype running on Docker engine, using docker-compose to launch a Traefik proxy and a go-based dumb web app Whoami._
 
 To understand more about Traefik: https://youtu.be/AqiGcLsVMeI  
 Traefik documentation: https://doc.traefik.io/traefik/
 
 ## Pre-requisite
 
-- Docker installed (Docker version 19.03.13, build 4484c46d9d)
+- Docker installed (tested with > Docker version 19.03.13, build 4484c46d9d)
 - The setup is based on an external network, which needs to be created (c.f. launch procedure)
 - Internet and credentials to access to https://hub.docker.com/
 
