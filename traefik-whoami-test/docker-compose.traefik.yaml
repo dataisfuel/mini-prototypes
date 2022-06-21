@@ -1,0 +1,37 @@
+services:
+  
+  proxy:
+    image: "traefik:v2.8"
+    container_name: traefik
+    networks:
+      - ${TRAEFIK_PUBLIC_NETWORK?Variable not set}
+    ports:
+      # HOST:CONTAINER
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      # connecting traefik to the docker deamon socket
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      # Using the File provider to manage static configuration
+      - "./conf/traefik.yaml:/etc/traefik/traefik.yaml:ro"
+    restart: always
+
+  whoami:
+    image: "traefik/whoami"
+    container_name: "whoami-service"
+    networks:
+      - ${TRAEFIK_PUBLIC_NETWORK?Variable not set}
+    labels:
+      # Explicitly tell Traefik to expose this container
+      - "traefik.enable=true"
+      # The domain the service will respond to
+      - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
+      # Allow request only from the predefined entry point named "web"
+      - "traefik.http.routers.whoami.entrypoints=web"
+      - "traefik.http.services.whoami.loadbalancer.server.port=80"
+
+networks:
+  web:
+    # For local dev, don't expect an external Traefik network
+    external: ${TRAEFIK_PUBLIC_NETWORK_IS_EXTERNAL?Variable not set}

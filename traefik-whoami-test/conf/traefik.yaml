@@ -1,0 +1,21 @@
+api:
+  insecure: true
+  dashboard: true
+entryPoints:
+  web:
+    address: ":80"
+  #  web.http:
+  #     web.http.redirections:
+  #       web.http.redirections.entryPoint:
+  #         to: "websecure"
+  #         scheme: "https"
+  #         permanent: true
+  # websecure:
+  #   address: ":443"
+  #   websecure.http.tls:
+  #     certResolver: "default"
+providers:
+  docker:
+    watch: true
+    exposedByDefault: false
+    network: "web"
