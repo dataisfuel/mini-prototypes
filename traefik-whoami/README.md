@@ -33,8 +33,8 @@ _Create the containers and launch the services as defined within the docker-comp
 
 *Un lancement reussi permet l'acces aux services suivants:*
 
-- Dashboard Traefik http://localhost:8080/
-- La page de Whoami http://whoami.localhost/
+- Traefik dashboard http://localhost:8080/
+- La page web de l'app Whoami http://whoami.localhost/
 
 ## Shudown Procedure
 
