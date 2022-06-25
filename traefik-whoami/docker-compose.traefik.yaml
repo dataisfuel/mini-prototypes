@@ -18,7 +18,7 @@ services:
     restart: always
 
   whoami:
-    image: "traefik/whoami"
+    image: "traefik/whoami:v1.8.1"
     container_name: "whoami-service"
     networks:
       - ${TRAEFIK_PUBLIC_NETWORK?Variable not set}
