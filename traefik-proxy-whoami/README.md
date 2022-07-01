@@ -1,6 +1,6 @@
 # Traefik Proxy & Whoami Prototype
 
-This is a mini protype running on Docker engine, using docker-compose to launch a Traefik proxy and a tiny web app Whoami.
+This is a mini protype running on Docker engine, using docker-compose to launch a Traefik proxy and a tiny web app Whoami.  
 The Whoami web app is implemented in go and returns client os information and HTTP request details.
 
 ![traefik-proxy-whoami_diagram.png](traefik-proxy-whoami_diagram.png)
