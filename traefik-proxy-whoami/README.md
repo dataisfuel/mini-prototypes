@@ -15,9 +15,7 @@ Traefik documentation: https://doc.traefik.io/traefik/
 ## Pre-requisite
 
 - Docker installed (tested with Docker version 19.03.13, build 4484c46d9d)
-- The setup is based on an external network, which needs to be created (c.f. launch procedure)
 - Internet access and credentials to connect to https://hub.docker.com/
-
 ## Environement Variables
 
 Environment variables are managed with .env files located under folder ./env/  
